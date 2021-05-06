@@ -1,0 +1,37 @@
+{
+    "name": "gimmo/laravel-payeer",
+    "description": "Payeer payments for Laravel",
+    "keywords": ["payeer", "laravel"],
+    "license": "MIT",
+    "homepage": "https://github.com/Gimmo/laravel-payeer",
+    "authors": [
+        {
+            "name": "Integer",
+            "email": "blissgameryt@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.5",
+        "laravel/framework": "8.*",
+        "guzzlehttp/guzzle": "7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gimmo\\Payeer\\Facades\\": "src/Facades",
+            "Gimmo\\Payeer\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gimmo\\Payeer\\PayeerServiceProvider"
+            ],
+            "aliases": {
+                "Payeer": "Gimmo\\Payeer\\Facades\\Payeer"
+            }
+        }
+    }
+}
