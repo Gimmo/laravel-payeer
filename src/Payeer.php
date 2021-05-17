@@ -133,7 +133,9 @@ class Payeer
         $order = $this->callSearchOrder($request);
         if (!$order) return $this->responseError($request->get('m_orderid'));
 
-        if (Str::lower($order['status']) === 'paid') return $this->responseOK($request->get('m_orderid'));
+        // if (Str::lower($order['status']) === 'paid') return $this->responseOK($request->get('m_orderid'));
+        if ( Str::lower($order['approved']) == 1 ) return $this->responseOK($request->get('m_orderid'));
+
         if (! $this->callPaidOrder($request, $order)) return $this->responseError($request->get('m_orderid'));
         return $this->responseOK($request->get('m_orderid'));
     }
