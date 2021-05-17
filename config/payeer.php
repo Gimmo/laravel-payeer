@@ -17,7 +17,7 @@ return [
     'searchOrder' => null, //  'App\Http\Controllers\PayeerController@searchOrder',
 
     /**
-     * If current status != paid then call PaidOrderFilter
+     * If current status != paid then (approved === 0) call PaidOrderFilter
      * update order into DB & other actions
      */
     'paidOrder' => null, //  'App\Http\Controllers\PayeerController@paidOrder',
